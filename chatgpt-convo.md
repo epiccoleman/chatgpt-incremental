@@ -180,3 +180,27 @@
 > export default IncrementalGame;
 > ```
 > In this updated implementation, the IncrementalGame component uses
+
+> **Eric Coleman**
+>
+> can you update my configuration in package.json so that the output of the build command goes into a directory titled "docs"
+
+> **ChatGPT**
+> Here is an example of how you could update your package.json file to specify that the output of the build command should go into a directory titled docs:
+> ```
+> {
+>   "name": "my-app",
+>   "version": "1.0.0",
+>   "private": true,
+>   "scripts": {
+>     "start": "react-scripts start",
+>     "build": "react-scripts build && mv build docs",
+>     "test": "react-scripts test",
+>     "eject": "react-scripts eject"
+>   },
+>   ...
+> }
+> ```
+> In this updated package.json file, the build command includes the mv command to move the build directory to a new directory titled docs. This means that after running the npm run build command, the output files will be placed in a docs directory instead of a build directory.
+>
+> You can then upload the files in the docs directory to your GitHub Pages site to host the app.
