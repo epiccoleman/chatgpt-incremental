@@ -291,3 +291,28 @@
 > The package.json and webpack.config.js files are at the root of the project directory.
 >
 > You can then run the npm run build command to generate the bundled JavaScript file and index.html file, and the resulting files can be uploaded to your GitHub Pages site to host the app.
+
+> **Eric Coleman**
+>
+> can you change the package.json so that the docs directory is removed before a build is performed?
+>
+> **ChatGPT**
+> Here is an example of how you could update your package.json file to remove the docs directory before running the build command:
+> ```
+> {
+>   "name": "my-app",
+>   "version": "1.0.0",
+>   "private": true,
+>   "homepage": "https://<your-github-username>.github.io/gpt-incremental",
+>   "scripts": {
+>     "start": "react-scripts start",
+>     "build": "rm -rf docs && react-scripts build && mv build docs",
+>     "test": "react-scripts test",
+>     "eject": "react-scripts eject"
+>   },
+>   ...
+> }
+> ```
+> In this updated package.json file, the build command now includes the rm -rf docs command, which removes the docs directory if it exists before running the react-scripts build command. This ensures that the docs directory is always removed before a new build is performed, so that old files from previous builds are not included in the new build.
+>
+> After running the npm run build command, the resulting files will be placed in a new docs directory, which can be uploaded to your GitHub Pages site to host the app.
